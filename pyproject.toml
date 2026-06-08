@@ -1,5 +1,5 @@
 [project]
-name = "jtorch"
+name = "torchey"
 version = "0.1.0"
 description = "A lightweight tensor library built from scratch for learning ML system design"
 readme = "README.md"
@@ -31,6 +31,6 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/jgyasu/jtorch"
-Repository = "https://github.com/jgyasu/jtorch"
-Issues = "https://github.com/jgyasu/jtorch/issues"
+Homepage = "https://github.com/jgyasu/torchey"
+Repository = "https://github.com/jgyasu/torchey"
+Issues = "https://github.com/jgyasu/torchey/issues"
