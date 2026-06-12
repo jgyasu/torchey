@@ -23,7 +23,7 @@ class Tensor:
 
         If a list or tuple of tensors is used to create another tensor, then
         the input tensors' data is extracted as NumPy arrays and stacked using np.stack
-        and new tensor's is created from it.
+        and new tensor is created from it.
         """
         if isinstance(data, (list, tuple)) and len(data) > 0 and isinstance(data[0], Tensor):
             arrays = []
@@ -96,3 +96,30 @@ class Tensor:
         result[mask_array] = value  # Boolean array indexing
         return result
 
+    def __add__(self, other):
+        """Add two tensors elementwise with broadcasting support."""
+        if isinstance(other, Tensor):
+            return Tensor(self.data + other.data)
+        else:
+            return Tensor(self.data + other)  # NumPy handles broadcasting
+
+    def __sub__(self, other):
+        """Subtract two tensors elementwise with broadcasting support."""
+        if isinstance(other, Tensor):
+            return Tensor(self.data - other.data)
+        else:
+            return Tensor(self.data - other)
+        
+    def __mul__(self, other):
+        """Multiply two tensors elementwise with broadcasting support."""
+        if isinstance(other, Tensor):
+            return Tensor(self.data * other.data)
+        else:
+            return Tensor(self.data * other)
+        
+    def __truediv__(self, other):
+        """Divide two tensors elementwise with broadcasting support."""
+        if isinstance(other, Tensor):
+            return Tensor(self.data / other.data)
+        else:
+            return Tensor(self.data / other)
